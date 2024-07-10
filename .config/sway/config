@@ -9,6 +9,12 @@ input "type:keyboard" {
 	xkb_layout de
 }
 
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+}
+
 #========================#
 # Appearance and Theming #
 #========================#
@@ -35,7 +41,7 @@ gaps outer 3
 default_border pixel 2
 
 # Set the Wallpaper:
-output * bg $HOME/.config/sway/wallpaper.jpg fill
+output * bg $HOME/.config/sway/kurzgesagt_wallpaper.png fill
 
 
 #====================================#
@@ -47,6 +53,7 @@ bar {
 }
 
 exec mako
+exec nextcloud
 
 
 #====================================#
@@ -73,7 +80,7 @@ exec swayidle -w \
 
 # Screen locking (manual)
 set $lock_screen exec bash ~/.config/sway/lock_screen.sh
-bindsym $mod+Escape exec $lock_screen
+bindsym $mod+l exec $lock_screen
 
 
 #========================================#

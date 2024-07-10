@@ -10,7 +10,7 @@ swayidle \
     timeout 10 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' &
 
-swaylock --effect-pixelate 5 --clock --screenshots --indicator --grace 10
+swaylock --effect-pixelate 5 --clock --screenshots --indicator --grace 3
 
 # Kills last background task so idle timer doesn't keep running
 kill %%
