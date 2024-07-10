@@ -1,0 +1,15 @@
+font=MesloLGS NF 14
+background-color=#101416
+text-color=#ffffff
+border-color=#7ad0ff
+width=300
+height=1000
+icons=1
+markup=1
+default-timeout=10000
+
+[urgency=high]
+text-color=#FFFFFF
+background-color=#ff5f5f
+border-color=#ff5f5f
+default-timeout=10000
