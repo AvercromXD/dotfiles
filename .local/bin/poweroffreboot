@@ -1,0 +1,12 @@
+#!/bin/sh
+
+CHOICE=$(printf '%s\n' "⏼  Shutdown" "  Reboot" "  Suspend" "  Lock" "  Logout" "  Hibernate"  | fuzzel -d -p "  Session Menu: ")
+
+case "$CHOICE" in
+	"⏼  Shutdown") systemctl poweroff ;;
+	"  Reboot") systemctl reboot ;;
+	"  Suspend") systemctl suspend ;;
+	"  Lock") bash ~/.config/sway/lock_screen.sh ;;
+	"  Logout") loginctl terminate-user $USER ;;
+	"  Hibernate") systemctl hibernate ;;
+esac

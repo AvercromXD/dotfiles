@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar"],
     "modules-center": ["custom/date" ],
-    "modules-right": ["idle_inhibitor", "mpd", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight",  "battery", "tray", "custom/power"],
+    "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory", "temperature", "backlight",  "battery", "tray", "custom/power"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
