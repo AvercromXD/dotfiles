@@ -238,5 +238,6 @@ bindsym $mod+space exec $menu
 #======#
 # Misc #
 #======#
+
 include /etc/sway/config-vars.d/*
 include /etc/sway/config.d/*
