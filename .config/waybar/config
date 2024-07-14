@@ -90,7 +90,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "interface": "wlp3s0",
+        //"interface": "wlo1",
         "format": "{ifname}",
         "format-wifi": " {signalStrength}%",
         "format-ethernet": " ",

@@ -211,7 +211,7 @@ bindsym XF86MonBrightnessUp exec light -A 10
 exec brightnessctl set 10%
 
 # Screenshot
-bindsym Print exec bash ~/.config/sway/screenshot.sh
+bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
 
 #=============================================#
 # Keyboard Shortcuts (launching applications) #
