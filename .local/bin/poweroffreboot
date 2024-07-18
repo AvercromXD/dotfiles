@@ -7,6 +7,6 @@ case "$CHOICE" in
 	"  Reboot") systemctl reboot ;;
 	"  Suspend") systemctl suspend ;;
 	"  Lock") bash ~/.config/sway/lock_screen.sh ;;
-	"  Logout") loginctl terminate-user $USER ;;
+	"  Logout") swaymsg exit ;;
 	"  Hibernate") systemctl hibernate ;;
 esac
