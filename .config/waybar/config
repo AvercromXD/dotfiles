@@ -69,7 +69,6 @@
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": [" ", " "],
         "on-scroll-up":"brightnessctl set +5%",
@@ -79,14 +78,13 @@
         "states": {
             "good": 82,
             "warning": 30,
-            "critical": 30
+            "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-good": "{capacity}% {icon}",
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
@@ -179,25 +177,5 @@
         "tooltip-format": "MPD (connected), {artist} - {album} - {title} ⸨{songPosition}/{queueLength}⸩",
         "tooltip-format-disconnected": "MPD (disconnected)",
     },
-
-    "custom/emacsd": {
-            "format": " ",
-            "on-click": "emacs --daemon && notify-send -t 5000 'Emacs-daemon-loaded.'",
-            "on-click-right": "pkill emacs && notify-send -t 5000 -u critical 'Emacs-daemon-terminated.'",
-            "tooltip": false
-        },
-
-  "custom/maildir": {
-    "exec": "~/.local/bin/mail.sh ~/.mail/crux/inbox/new editor@crux.name",
-    "format": " {}",
-    "return-type": "json",
-    "tooltip": true,
-    "on-click-right": "~/.local/bin/syncmail.sh",
-    "on-click": "~/.local/bin/checkmail.sh ~/.mail/crux/inbox/new editor@crux.name",
-  },
-    "custom/tabletmode": {
-            "format": "⌨",
-            "on-click": "~/.config/sway/norotate.sh",
-            "tooltip": false
-        },
-}
+},
+    
