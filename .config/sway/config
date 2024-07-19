@@ -2,11 +2,11 @@
 # Monitor and Keyboard #
 #======================#
 
-output DP-1 res 2560x1440 pos 1920,0
-output DP-2 res 1920x1080 pos 0,0
-#set $laptop eDP-1
-#bindswitch --reload --locked lid:on output $laptop disable
-#bindswitch --reload --locked lid:off output $laptop enable
+#output DP-1 res 2560x1440 pos 1920,0
+#output DP-2 res 1920x1080 pos 0,0
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
 input "type:keyboard" {
 	xkb_layout de
@@ -221,7 +221,7 @@ bindsym XF86MonBrightnessUp exec light -A 10
 exec brightnessctl set 10%
 
 # Screenshot
-bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
+bindsym Print exec bash ~/.config/sway/screenshot.sh
 
 #=============================================#
 # Keyboard Shortcuts (launching applications) #
@@ -236,7 +236,7 @@ bindsym $mod+shift+b exec firefox
 bindsym $mod+shift+t exec thunar 
 
 # Open a terminal emulator:
-set $term kitty
+set $term foot
 bindsym $mod+Return exec $term
 
 # Kill focused window:
