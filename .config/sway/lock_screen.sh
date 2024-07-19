@@ -12,7 +12,6 @@ swayidle \
 
 #swaylock --effect-pixelate 5 --clock --screenshots --indicator --grace 3
 swaylock \
-	--screenshots \
 	--clock \
 	--indicator \
 	--indicator-radius 100 \
