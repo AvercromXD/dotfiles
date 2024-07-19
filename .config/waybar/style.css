@@ -64,6 +64,7 @@ window#waybar.hidden {
 #clock,
 #idle_inhibitor,
 #idle_inhibitor.activated,
+#tray,
 #tray {
   border-radius: 4px;
   margin: 6px 3px;
