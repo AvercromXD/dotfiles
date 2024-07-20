@@ -233,10 +233,10 @@ set $menu wofi --show drun  -i | xargs swaymsg exec --
 bindsym $mod+shift+b exec firefox
 
 # Open a file manager:
-bindsym $mod+shift+t exec thunar 
+bindsym $mod+shift+t exec nemo 
 
 # Open a terminal emulator:
-set $term kitty
+set $term foot
 bindsym $mod+Return exec $term
 
 # Kill focused window:
