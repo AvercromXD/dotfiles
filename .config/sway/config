@@ -60,6 +60,7 @@ bar {
 exec mako
 exec blueman-applet
 exec nextcloud --background
+exec nm-applet
 
 
 #====================================#

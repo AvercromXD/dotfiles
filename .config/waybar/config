@@ -98,9 +98,7 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "tooltip-format-disconnected": "Disconnected",
-        "on-scroll-up":"bash .local/bin/netcon",
-        "on-scroll-down":"bash .local/bin/netdiscon",
-        "on-click-right": "foot nmtui",
+        "on-click": "foot nmtui",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
