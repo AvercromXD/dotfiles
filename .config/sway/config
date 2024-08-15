@@ -5,8 +5,7 @@
 #output DP-1 res 2560x1440 pos 1920,0
 #output DP-2 res 1920x1080 pos 0,0
 set $laptop eDP-1
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+bindswitch --reload --locked lid:on exec $lock
 
 input "type:keyboard" {
 	xkb_layout de
@@ -60,6 +59,7 @@ bar {
 exec mako
 exec blueman-applet
 exec nextcloud --background
+exec nm-applet --indicator
 
 
 #====================================#
@@ -74,18 +74,25 @@ set $alt Mod1
 bindsym $mod+Shift+c reload
 
 # Quit your current session and return to the log-in manager/tty:
-bindsym $mod+Shift+e exec $HOME/.config/sway/exit.sh
+bindsym $mod+Shift+e exec sh $HOME/.local/bin/swayexit
 
 # Screen locking (automatic, with a timeout)
 exec swayidle -w \
-    timeout 300 $lock_screen \
+    timeout 300 'swaylock --clock --indicator' \
     timeout 360 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep $lock_screen
+    before-sleep 'swaylock --clock --indicator' \
+    before-sleep 'playerctl pause' \
+    before-sleep 'swaymsg "output * power off"' \
+    unlock 'swaymsg "output * power on"' \
+    after-resume 'swaymsg "output * power on"'
 
 # Screen locking (manual)
-set $lock_screen exec bash ~/.config/sway/lock_screen.sh
-bindsym $mod+l exec $lock_screen
+set $lock swaylock \
+	--clock \
+	--indicator \
+
+bindsym $mod+l exec $lock
 
 
 #========================================#
@@ -233,7 +240,7 @@ set $menu wofi --show drun  -i | xargs swaymsg exec --
 bindsym $mod+shift+b exec firefox
 
 # Open a file manager:
-bindsym $mod+shift+t exec nemo
+bindsym $mod+shift+n exec nemo
 
 # Open a terminal emulator:
 set $term foot

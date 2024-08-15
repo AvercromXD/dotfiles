@@ -122,7 +122,6 @@
             "exec": "date +'%Y-%m-%d %A %l:%M %p'",
             "on-click": "foot -a=calendar sh -c calcurse",
             "on-click-middle": "pkill calcurse",
-            "on-click-right": "dash .local/bin/cal.sh",
             "tooltip": false
         },
     "custom/power": {
