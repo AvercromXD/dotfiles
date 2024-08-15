@@ -5,7 +5,7 @@
 #output DP-1 res 2560x1440 pos 1920,0
 #output DP-2 res 1920x1080 pos 0,0
 set $laptop eDP-1
-bindswitch --reload --locked lid:on exec $lock
+bindswitch --reload --locked lid:on exec swaylock --clock --indicator 
 
 input "type:keyboard" {
 	xkb_layout de
@@ -83,15 +83,9 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock --clock --indicator' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaymsg "output * power off"' \
-    unlock 'swaymsg "output * power on"' \
-    after-resume 'swaymsg "output * power on"'
 
 # Screen locking (manual)
-set $lock swaylock \
-	--clock \
-	--indicator \
-
+set $lock bash ~/.config/sway/lock.sh 
 bindsym $mod+l exec $lock
 
 

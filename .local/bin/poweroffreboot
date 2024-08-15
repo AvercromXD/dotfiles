@@ -6,7 +6,7 @@ case "$CHOICE" in
 	"⏼  Shutdown") systemctl poweroff ;;
 	"  Reboot") systemctl reboot ;;
 	"  Suspend") systemctl suspend ;;
-	"  Lock") swaylock --clock --indicator ;;
+	"  Lock") bash ~/.config/sway/lock.sh;;
 	"  Logout") swaymsg exit;;
 	"  Hibernate") systemctl hibernate ;;
 esac
