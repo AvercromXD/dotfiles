@@ -233,10 +233,10 @@ bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+shift+b exec firefox
+bindsym $mod+shift+b exec brave-browser
 
 # Open a file manager:
-bindsym $mod+shift+t exec nemo
+bindsym $mod+shift+t exec nautilus
 
 # Open a terminal emulator:
 set $term foot

@@ -137,3 +137,6 @@ export HSA_OVERRIDE_GFX_VERSION=10.3.0
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=$HOME/.local/bin:$PATH
+
+export PATH=$PATH:/home/ian/.spicetify
+eval "$(zoxide init zsh)"

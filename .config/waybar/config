@@ -125,7 +125,7 @@
         },
     "custom/power": {
             "format": "",
-            "on-click": "sh .local/bin/poweroffreboot",
+            "on-click": "sh ~/.config/waybar/power-menu-sway",
             "tooltip": false
         },
     "sway/scratchpad": {
