@@ -172,7 +172,6 @@ window#waybar.hidden {
 #idle_inhibitor.activated {
     box-shadow: inset 0px 0px #ecF0F1;
     background-color: #f2cdcd;
-
 }
 
 tooltip {

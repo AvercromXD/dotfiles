@@ -1,0 +1,107 @@
+{
+    "bar_id": "bar-0",
+        "ipc": true,
+        "position": "top",
+        "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+        "modules-center": ["custom/date" ],
+        "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory",  "backlight",  "battery", "tray", "custom/power"],
+        "wlr/taskbar": {
+            "format": "{icon}",
+            "icon-size": 18,
+            "tooltip-format": "{title}",
+            //"icon-theme": "Papirus-Dark",
+            "icon-theme": "Adwaita",
+            "on-click": "activate",
+            "on-click-middle": "close",
+            "ignore-list": [
+                "Alacritty"
+            ],
+            "app_ids-mapping": {
+                "firefoxdeveloperedition": "firefox-developer-edition"
+            }
+        },
+
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": " ",
+                "deactivated": " "
+            },
+            "start-activated": true,
+            "tooltip": false
+        },
+        "tray": {
+            // "icon-size": 21,
+            "spacing": 10
+        },
+        "cpu": {
+            "format": "{usage}%  ",
+            "tooltip": false
+        },
+        "memory": {
+            "format": "{used:0.1f}G  ",
+            "tooltip": false
+
+        },
+        "backlight": {
+            "format": "{percent}% {icon}",
+            "format-icons": [" ", " "],
+            "on-scroll-up":"brightnessctl set +5%",
+            "on-scroll-down":"brightnessctl set 5%-"
+        },
+        "battery": {
+            "states": {
+                "good": 82,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% ",
+            "format-plugged": "{capacity}% ",
+            "format-alt": "{time} {icon}",
+            "format-good": "{capacity}% {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "network": {
+            //"interface": "wlp3s0",
+            "format": "{ifname}",
+            "format-wifi": " {signalStrength}%",
+            "format-ethernet": " ",
+            "format-disconnected": "", //An empty format will hide the module.
+            "format-disconnected": "",
+            "tooltip-format": "{ifname}",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+            "tooltip-format-disconnected": "Disconnected",
+            "on-click": "foot nmtui",
+        },
+        "pulseaudio": {
+            // "scroll-step": 1, // %, can be a float
+            "format": "{volume}% {icon} {format_source}",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": " ",
+            "format-icons": {
+                "default": [" ", " ", "  "]
+            },
+            "on-click": "pavucontrol -t 3",
+            "on-click-right": "pkill pavucontrol"
+        },
+        "custom/date": {
+            "format": "{}",
+            "interval": 60,
+            "exec": "date +'%Y-%m-%d %A %l:%M %p'",
+            "on-click": "foot -a=calendar sh -c calcurse",
+            "on-click-middle": "pkill calcurse",
+            "on-click-right": "dash .local/bin/cal.sh",
+            "tooltip": false
+        },
+        "custom/power": {
+            "format": "",
+            "on-click": "sh ~/.config/waybar/hyprland/power-menu-hypr",
+            "tooltip": false
+        },
+},
+

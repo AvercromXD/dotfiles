@@ -228,7 +228,9 @@ bindsym XF86MonBrightnessUp exec light -A 10
 exec brightnessctl set 10%
 
 # Screenshot
-bindsym Print exec bash ~/.config/sway/screenshot.sh
+# bindsym Print exec bash ~/.config/sway/screenshot.sh
+bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
+
 
 #=============================================#
 # Keyboard Shortcuts (launching applications) #
@@ -237,7 +239,7 @@ bindsym Print exec bash ~/.config/sway/screenshot.sh
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+shift+b exec firefox
+bindsym $mod+shift+b exec brave-browser
 
 # Open a file manager:
 bindsym $mod+shift+n exec nautilus
