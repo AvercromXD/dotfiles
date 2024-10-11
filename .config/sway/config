@@ -216,6 +216,12 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Only for Laptop with Messenger Buttons (e.g. Thinkpad E14 Gen 4)
+bindsym XF86Messenger exec playerctl play
+bindsym XF86Go exec playerctl previous
+bindsym Cancel exec playerctl next
+bindsym XF86Favorites exec playerctl pause
+
 # Brightness
 bindsym XF86MonBrightnessDown exec light -U 10
 bindsym XF86MonBrightnessUp exec light -A 10
@@ -234,7 +240,7 @@ set $menu wofi --show drun  -i | xargs swaymsg exec --
 bindsym $mod+shift+b exec firefox
 
 # Open a file manager:
-bindsym $mod+shift+n exec nemo
+bindsym $mod+shift+n exec nautilus
 
 # Open a terminal emulator:
 set $term foot
