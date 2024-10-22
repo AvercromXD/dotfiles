@@ -1,16 +1,14 @@
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 10;
   min-height: 0;
   font-family: MesloLGS NF;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 window#waybar {
-  background-color: #181825;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  background: transparent;
 }
 
 window#waybar.hidden {
@@ -112,7 +110,8 @@ window#waybar.hidden {
 }
 
 #battery {
-  background-color: #f38ba8;
+  color: #161320;
+	background: #B5E8E0;
 }
 
 #battery.warning,

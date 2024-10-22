@@ -2,7 +2,7 @@
     "bar_id": "bar-0",
         "ipc": true,
         "position": "top",
-        "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+        "modules-left": ["hyprland/workspaces"],
         "modules-center": ["custom/date" ],
         "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory",  "backlight",  "battery", "tray", "custom/power"],
         "wlr/taskbar": {

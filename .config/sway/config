@@ -246,7 +246,7 @@ bindsym $mod+shift+b exec brave-browser
 bindsym $mod+shift+t exec nautilus
 
 # Open a terminal emulator:
-set $term foot
+set $term kitty
 bindsym $mod+Return exec $term
 
 # Kill focused window:
