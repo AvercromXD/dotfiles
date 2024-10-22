@@ -239,7 +239,7 @@ bindsym Print exec bash ~/.config/sway/screenshot.sh
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+shift+b exec brave-browser
+bindsym $mod+shift+b exec firefox
 
 # Open a file manager:
 bindsym $mod+shift+n exec nautilus
