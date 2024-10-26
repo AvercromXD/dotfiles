@@ -217,7 +217,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Only for Laptop with Messenger Buttons (e.g. Thinkpad E14 Gen 4)
-bindsym XF86Messenger exec playerctl play
+bindsym XF86Messenger exec playerctl play-pause
 bindsym XF86Go exec playerctl previous
 bindsym Cancel exec playerctl next
 bindsym XF86Favorites exec playerctl pause
@@ -229,7 +229,9 @@ exec brightnessctl set 10%
 
 # Screenshot
 bindsym Print exec bash ~/.config/sway/screenshot.sh
-# bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
+
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 
 
 #=============================================#
