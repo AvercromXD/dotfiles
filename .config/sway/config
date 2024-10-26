@@ -218,7 +218,7 @@ bindsym XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pk
 bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
 bindsym XF86AudioMicMute exec "wpctl set-mute @DEFAULT_SOURCE@ toggle"
 
-bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -230,7 +230,7 @@ exec brightnessctl set 10%
 
 # Screenshot
 # bindsym Print exec bash ~/.config/sway/screenshot.sh
-bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
+bindsym Home exec bash ~/.config/sway/screenshot.sh
 
 
 #=============================================#
@@ -240,10 +240,10 @@ bindsym XF86HomePage exec bash ~/.config/sway/screenshot.sh
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
-bindsym $mod+shift+b exec brave-browser
+bindsym $mod+b exec firefox
 
 # Open a file manager:
-bindsym $mod+shift+t exec nautilus
+bindsym $mod+n exec nautilus
 
 # Open a terminal emulator:
 set $term kitty
