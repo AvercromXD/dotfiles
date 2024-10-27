@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar"],
     "modules-center": ["custom/date" ],
-    "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory", "temperature", "backlight",  "battery", "tray", "custom/power"],
+    "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory", "backlight",  "battery", "tray", "custom/power"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -118,7 +118,7 @@
             "format": "{}",
             "interval": 60,
             "exec": "date +'%Y-%m-%d %A %l:%M %p'",
-            "on-click": "foot -a=calendar sh -c calcurse",
+            "on-click": "kitty --app-id=calendar sh -c calcurse",
             "on-click-middle": "pkill calcurse",
             "tooltip": false
         },
