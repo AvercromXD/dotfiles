@@ -2,15 +2,14 @@
     "bar_id": "bar-0",
         "ipc": true,
         "position": "top",
-        "modules-left": ["hyprland/workspaces"],
+        "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
         "modules-center": ["custom/date" ],
         "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory",  "backlight",  "battery", "tray", "custom/power"],
         "wlr/taskbar": {
             "format": "{icon}",
             "icon-size": 18,
             "tooltip-format": "{title}",
-            //"icon-theme": "Papirus-Dark",
-            "icon-theme": "Adwaita",
+            "icon-theme": "Papirus-Dark",
             "on-click": "activate",
             "on-click-middle": "close",
             "ignore-list": [
@@ -22,10 +21,10 @@
         },
         "hyprland/workspaces": {
             "format": "{icon}",
-            "format-icons": {
-                "active": "◉",
-                "default": "○" 
-            },
+            //"format-icons": {
+            //    "active": "◉",
+            //    "default": "○" 
+            //},
             "persistent-workspaces": {
                 "*": [1, 2, 3, 4, 5, 6 ]
             }
@@ -104,7 +103,7 @@
             "format": "{}",
             "interval": 60,
             "exec": "date +'%Y-%m-%d %A %l:%M %p'",
-            "on-click": "foot -a=calendar sh -c calcurse",
+            "on-click": "kitty --app-id=calendar sh -c calcurse",
             "on-click-middle": "pkill calcurse",
             "on-click-right": "dash .local/bin/cal.sh",
             "tooltip": false

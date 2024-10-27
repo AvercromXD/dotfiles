@@ -72,9 +72,10 @@ window#waybar.hidden {
 }
 
 #custom-power {
-  margin-right: 6px;
+transition: none;
+	color: #161320;
+	background: #F28FAD;
 }
-
 #taskbar button,
 #taskbar button.active {
     padding: 0px 7px;
