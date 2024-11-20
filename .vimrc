@@ -94,12 +94,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'junegunn/fzf.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'itchyny/lightline.vim'
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-fugitive'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -123,8 +119,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
-let g:ycm_error_symbol = 'E'
-let g:ycm_warning_symbol = 'W'
 set background=dark    " Setting dark mode
 let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 set termguicolors
