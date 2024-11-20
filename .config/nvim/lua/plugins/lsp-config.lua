@@ -14,12 +14,9 @@ return {
                     "clangd",
                     "csharp_ls",
                     "ltex",
-                    "hls",
                     "ts_ls",
-                    "jedi_language_server",
                     "rust_analyzer",
-                    "zls",
-                    "yamlls",
+                    "ruff",
                 },
             })
         end,
@@ -35,20 +32,6 @@ return {
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.csharp_ls.setup({ capabilities = capabilities })
             lspconfig.ltex.setup({ capabilities = capabilities })
-            lspconfig.hls.setup({ capabilities = capabilities })
-            lspconfig.yamlls.setup({
-                capabilities = capabilities,
-                settings = {
-                    yaml = {
-                        schemas = {
-                            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                            ["../path/relative/to/file.yml"] = "/.github/workflows/*",
-                            ["/path/from/root/of/project"] = "/.github/workflows/*",
-                        },
-                    },
-                },
-            })
-            lspconfig.zls.setup({ capabilities = capabilities })
             lspconfig.rust_analyzer.setup({
                 settings = {
                     ["rust-analyzer"] = {
@@ -59,7 +42,14 @@ return {
                 },
                 capabilities = capabilities,
             })
-            lspconfig.jedi_language_server.setup({ capabilities = capabilities })
+            lspconfig.ruff.setup({
+                capabilities = capabilities,
+                init_options = {
+                    settings = {
+                        -- Server settings should go here
+                    },
+                },
+            })
             lspconfig.ts_ls.setup({ capabilities = capabilities })
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
