@@ -77,8 +77,6 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'dense-analysis/ale'
 
-    Plug 'airblade/vim-gitgutter'
-
     Plug 'preservim/nerdtree'
 
     Plug 'catppuccin/vim', { 'as': 'catppuccin' }

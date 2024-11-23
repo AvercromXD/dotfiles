@@ -5,10 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 alias pbcopy='xsel --input --clipboard'
@@ -16,7 +16,6 @@ alias pbpaste='xsel --output --clipboard'
 
 ROS_ID=20
 if [ -f /opt/ros/humble/setup.zsh ]; then
-    echo "Sourcing ROS2 with Domain ID $ROS_ID"
     source /opt/ros/humble/setup.zsh
     export ROS_DOMAIN_ID=$ROS_ID
 fi
@@ -29,6 +28,7 @@ if [ -f /etc/os-release ]; then
 fi
 
 # Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -63,12 +63,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-
 [ -f "/home/ian/.ghcup/env" ] && . "/home/ian/.ghcup/env" # ghcup-env
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/.p10k.zsh.
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
