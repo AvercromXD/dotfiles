@@ -14,10 +14,11 @@ source $ZSH/oh-my-zsh.sh
 alias pbcopy='xsel --input --clipboard'
 alias pbpaste='xsel --output --clipboard'
 
-ROS_ID=20
+ROS_ID=37
 if [ -f /opt/ros/humble/setup.zsh ]; then
     source /opt/ros/humble/setup.zsh
     export ROS_DOMAIN_ID=$ROS_ID
+    #export ROS_LOCALHOST_ONLY=1
 fi
 
 if [ -f /etc/os-release ]; then

@@ -69,7 +69,6 @@ set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set laststatus=2
 
-source /home/ian/.vim/lsp-examples/vimrc.generated
 " PLUGINS ---------------------------------------------------------------- {{{
 
 " Plugin code goes here.
@@ -90,12 +89,12 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'itchyny/lightline.vim'
 
 Plugin 'iamcco/markdown-preview.nvim'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 
