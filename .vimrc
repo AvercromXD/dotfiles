@@ -108,10 +108,10 @@ filetype on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " autocmd vimenter * ++nested colorscheme gruvbox
-
+let mapleader = "\<Space>"
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTree<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 nmap <C-p> <Plug>MarkdownPreviewToggle
