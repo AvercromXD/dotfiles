@@ -244,14 +244,14 @@ set $menu wofi --show drun  -i | xargs swaymsg exec --
 bindsym $mod+b exec firefox
 
 # Open a file manager:
-bindsym $mod+n exec nautilus
+bindsym $mod+n exec nemo
 
 # Open a terminal emulator:
-set $term kitty
+set $term alacritty
 bindsym $mod+Return exec $term
 
 # Kill focused window:
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # Open the application launcher:
 bindsym $mod+space exec $menu

@@ -1,141 +1,110 @@
 {
     "bar_id": "bar-0",
-    "ipc": true,
-    "position": "top",
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "wlr/taskbar"],
-    "modules-center": ["custom/date" ],
-    "modules-right": ["idle_inhibitor",  "pulseaudio", "network", "cpu", "memory", "backlight",  "battery", "tray", "custom/power"],
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/window": {
-       "format": "{}",
-       "on-click-middle": "sway kill",
-       "on-click": "sway floating toggle",
-       "on-click-right": "sway move scratchpad",
-       "on-scroll-up":"sway focus prev",
-       "on-scroll-down":"sway focus next",
-       "tooltip": false
-    },
-
-    "wlr/taskbar": {
-         "format": "{icon}",
-         "icon-size": 16,
-         "tooltip-format": "{title}",
-	 "icon-theme": "Papirus-Dark",
-         "on-click": "activate",
-         "on-click-middle": "close",
-	 "on-click-right": "sway move scratchpad",
-	 "on-scroll-up":"sway focus prev",
-	 "on-scroll-down":"sway focus next",
-         "ignore-list": [
-             "Alacritty"
-         ],
-         "app_ids-mapping": {
-              "firefoxdeveloperedition": "firefox-developer-edition"
-         }
-    },
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " "
+        "ipc": true,
+        "position": "top",
+        "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+        "modules-center": ["custom/date" ],
+        "modules-right": ["memory", "cpu", "idle_inhibitor","pulseaudio", "network",  "backlight",  "battery", "tray", "custom/power"],
+        "wlr/taskbar": {
+            "format": "{icon}",
+            "icon-size": 18,
+            "tooltip-format": "{title}",
+            "icon-theme": "Papirus-Dark",
+            "on-click": "activate",
+            "on-click-middle": "close",
+            "app_ids-mapping": {
+                "firefoxdeveloperedition": "firefox-developer-edition"
+            }
         },
-	"start-activated": false,
-	"tooltip": false
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "cpu": {
-        "format": "{usage}%  ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{used:0.1f}G  ",
-        "tooltip": false
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            //"format-icons": {
+            //    "active": "◉",
+            //    "default": "○" 
+            //},
+        },
 
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
-        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
-        "input-filename": "temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": [" ", " "],
-        "on-scroll-up":"brightnessctl set +5%",
-        "on-scroll-down":"brightnessctl set 5%-"
-    },
-    "battery": {
-        "states": {
-            "good": 82,
-            "warning": 30,
-            "critical": 15
+
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": " ",
+                "deactivated": " "
+            },
+            "start-activated": true,
+            "tooltip": false
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-good": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        //"interface": "wlp3s0",
-        "format": "{ifname}",
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": " ",
-        "format-disconnected": "", //An empty format will hide the module.
-        "format-disconnected": "",
-        "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "foot nmtui",
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": " ",
-        "format-icons": {
-            "default": [" ", " ", "  "]
+        "tray": {
+            // "icon-size": 21,
+            "spacing": 10
         },
-        "on-click": "pavucontrol -t 3",
-        "on-click-right": "pkill pavucontrol"
-    },
-    "custom/date": {
+        "cpu": {
+            "format": "{usage}%  ",
+            "tooltip": false
+        },
+        "memory": {
+            "format": "{used:0.1f}G  ",
+            "tooltip": false
+
+        },
+        "backlight": {
+            "format": "{percent}% {icon}",
+            "format-icons": [" ", " "],
+            "on-scroll-up":"brightnessctl set +5%",
+            "on-scroll-down":"brightnessctl set 5%-"
+        },
+        "battery": {
+            "states": {
+                "good": 82,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% ",
+            "format-plugged": "{capacity}% ",
+            "format-alt": "{time} {icon}",
+            "format-good": "{capacity}% {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "network": {
+            //"interface": "wlp3s0",
+            "format": "{ifname}",
+            "format-wifi": " {signalStrength}%",
+            "format-ethernet": " ",
+            "format-disconnected": "", //An empty format will hide the module.
+            "format-disconnected": "",
+            "tooltip-format": "{ifname}",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+            "tooltip-format-disconnected": "Disconnected",
+            "on-click": "foot nmtui",
+        },
+        "pulseaudio": {
+            // "scroll-step": 1, // %, can be a float
+            "format": "{volume}% {icon} {format_source}",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": " ",
+            "format-icons": {
+                "default": [" ", " ", "  "]
+            },
+            "on-click": "pavucontrol -t 3",
+            "on-click-right": "pkill pavucontrol"
+        },
+        "custom/date": {
             "format": "{}",
             "interval": 60,
             "exec": "date +'%Y-%m-%d %A %l:%M %p'",
-            "on-click": "kitty --app-id=calendar sh -c calcurse",
+            "on-click": "alacritty --app-id=calendar sh -c calcurse",
             "on-click-middle": "pkill calcurse",
             "tooltip": false
         },
-    "custom/power": {
+        "custom/power": {
             "format": "",
-            "on-click": "sh ~/.config/waybar/power-menu-sway",
+            "on-click": "sh ~/.config/waybar/power-menu-hypr",
             "tooltip": false
         },
-    "sway/scratchpad": {
-            "format": "{icon} {count}",
-            "show-empty": true,
-            "format-icons": ["", ""],
-            "tooltip": true,
-            "tooltip-format": "{app}: {title}",
-            "on-scroll-down": "sway scratchpad show",
-            "on-scroll-up": "sway scratchpad show",
-            "on-click": "sway scratchpad show",
-        },
 },
-    
+
