@@ -69,7 +69,6 @@ set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set laststatus=2
 
-source /home/ian/.vim/lsp-examples/vimrc.generated
 " PLUGINS ---------------------------------------------------------------- {{{
 
 " Plugin code goes here.
@@ -90,14 +89,12 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'itchyny/lightline.vim'
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-fugitive'
 Plugin 'iamcco/markdown-preview.nvim'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 
@@ -111,16 +108,14 @@ filetype on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " autocmd vimenter * ++nested colorscheme gruvbox
-
+let mapleader = "\<Space>"
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTree<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
-let g:ycm_error_symbol = 'E'
-let g:ycm_warning_symbol = 'W'
 set background=dark    " Setting dark mode
 let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 set termguicolors

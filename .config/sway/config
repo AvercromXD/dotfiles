@@ -2,11 +2,10 @@
 # Monitor and Keyboard #
 #======================#
 
-output DP-1 res 2560x1440 pos 1920,0
-output DP-2 res 1920x1080 pos 0,0
-#set $laptop eDP-1
-#bindswitch --reload --locked lid:on output $laptop disable
-#bindswitch --reload --locked lid:off output $laptop enable
+#output DP-1 res 2560x1440 pos 1920,0
+#output DP-2 res 1920x1080 pos 0,0
+set $laptop eDP-1
+bindswitch --reload --locked lid:on exec swaylock --clock --indicator 
 
 input "type:keyboard" {
 	xkb_layout de
@@ -83,15 +82,9 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock --clock --indicator' \
     before-sleep 'playerctl pause' \
-    before-sleep 'swaymsg "output * power off"' \
-    unlock 'swaymsg "output * power on"' \
-    after-resume 'swaymsg "output * power on"'
 
 # Screen locking (manual)
-set $lock swaylock \
-	--clock \
-	--indicator \
-
+set $lock bash ~/.config/sway/lock.sh 
 bindsym $mod+l exec $lock
 
 
@@ -222,14 +215,22 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Only for Laptop with Messenger Buttons (e.g. Thinkpad E14 Gen 4)
+bindsym XF86Messenger exec playerctl play-pause
+bindsym XF86Go exec playerctl previous
+bindsym Cancel exec playerctl next
+bindsym XF86Favorites exec playerctl pause
+
 # Brightness
 bindsym XF86MonBrightnessDown exec light -U 10
 bindsym XF86MonBrightnessUp exec light -A 10
 exec brightnessctl set 10%
 
 # Screenshot
-# bindsym Print exec bash ~/.config/sway/screenshot.sh
-bindsym Home exec bash ~/.config/sway/screenshot.sh
+bindsym Print exec bash ~/.config/sway/screenshot.sh
+
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 
 
 #=============================================#
@@ -239,17 +240,18 @@ bindsym Home exec bash ~/.config/sway/screenshot.sh
 set $menu wofi --show drun  -i | xargs swaymsg exec --
 
 # Launch your browser:
+
 bindsym $mod+b exec firefox
 
 # Open a file manager:
-bindsym $mod+n exec nautilus
+bindsym $mod+n exec nemo
 
 # Open a terminal emulator:
-set $term kitty
+set $term alacritty
 bindsym $mod+Return exec $term
 
 # Kill focused window:
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # Open the application launcher:
 bindsym $mod+space exec $menu

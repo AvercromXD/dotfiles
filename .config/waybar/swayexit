@@ -1,8 +1,0 @@
-#!/bin/sh
-
-CHOICE=$(printf '%s\n' "Yes" "No" | fuzzel -d -p " Logout? " -l 2)
-
-case "$CHOICE" in
-	"Yes") swaymsg exit ;;
-	"No") true ;;
-esac

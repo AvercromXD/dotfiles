@@ -17,12 +17,21 @@ source $ZSH/oh-my-zsh.sh
 alias pbcopy='xsel --input --clipboard'
 alias pbpaste='xsel --output --clipboard'
 
-ROS_ID=20
+ROS_ID=37
 if [ -f /opt/ros/humble/setup.zsh ]; then
     source /opt/ros/humble/setup.zsh
     export ROS_DOMAIN_ID=$ROS_ID
+    #export ROS_LOCALHOST_ONLY=1
 fi
 
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID" = "ubuntu" ] && [ "$VERSION_ID" = "22.04" ]; then
+        export PATH="$PATH:/opt/nvim-linux64/bin"
+    fi
+fi
+
+# Lines configured by zsh-newuser-install
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -38,13 +47,9 @@ compinit
 
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=$HOME/.local/bin:$PATH
 
-export PATH=$PATH:/home/ian/.spicetify
 eval "$(zoxide init zsh)"
 
 # >>> conda initialize >>>
@@ -61,7 +66,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
 
 [ -f "/home/ian/.ghcup/env" ] && . "/home/ian/.ghcup/env" # ghcup-env
 

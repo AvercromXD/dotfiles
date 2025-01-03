@@ -17,6 +17,8 @@ return {
                     "ts_ls",
                     "rust_analyzer",
                     "ruff",
+                    "jedi_language_server",
+                    "pyright",
                 },
             })
         end,
@@ -42,15 +44,17 @@ return {
                 },
                 capabilities = capabilities,
             })
-            lspconfig.ruff.setup({
-                capabilities = capabilities,
-                init_options = {
-                    settings = {
+            --lspconfig.ruff.setup({
+            --    capabilities = capabilities,
+            --    init_options = {
+            --       settings = {
                         -- Server settings should go here
-                    },
-                },
-            })
+            --        },
+            --    },
+            --})
             lspconfig.ts_ls.setup({ capabilities = capabilities })
+            --lspconfig.jedi_language_server.setup({capabilities = capabilities})
+            lspconfig.pyright.setup({capabilities})
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
