@@ -47,7 +47,8 @@ compinit
 
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 export PATH=$HOME/.local/bin:$PATH
 
 eval "$(zoxide init zsh)"
