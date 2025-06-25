@@ -97,8 +97,7 @@
             "format": "{}",
             "interval": 60,
             "exec": "date +'%Y-%m-%d %A %l:%M %p'",
-            "on-click": "alacritty --app-id=calendar sh -c calcurse",
-            "on-click-middle": "pkill calcurse",
+            "on-click": "thunderbird --calendar",
             "tooltip": false
         },
         "custom/power": {
