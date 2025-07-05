@@ -53,7 +53,7 @@ xwayland enable
 #====================================#
 # Set the waybar command for the application launcher:
 bar {
-    swaybar_command waybar
+    swaybar_command "waybar -c ~/.config/config-sway"
 }
 
 exec mako
