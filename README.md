@@ -16,4 +16,5 @@ My personal dotfiles config, for mainly hyprland usage. Main branch is for my de
 - network-manager-applet
 - blueman
 - Thunderbird (waybar calendar on click)
+- Nemo
 
