@@ -97,7 +97,7 @@
             "format": "{}",
             "interval": 60,
             "exec": "date +'%Y-%m-%d %A %l:%M %p'",
-            "on-click": "thunderbird --calendar",
+            "on-click": "flatpak run net.thunderbird.Thunderbird --calendar",
             "tooltip": false
         },
         "custom/power": {

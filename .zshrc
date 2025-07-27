@@ -71,3 +71,8 @@ unset __conda_setup
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
 
 [ -f "/home/ian/.ghcup/env" ] && . "/home/ian/.ghcup/env" # ghcup-env
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/ian/.lmstudio/bin"
+# End of LM Studio CLI section
+
